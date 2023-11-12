@@ -31,5 +31,24 @@ namespace GerenciamentoProdutos.Controller
             }
             return await _context.Produtos.ToListAsync();
         }
+
+        // GET COM ID
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Produto>> GetProdutos(int id)
+        {
+            if(_context.Produtos == null)
+            {
+                return NotFound();
+            }
+            
+            var produto = await _context.Produtos.FindAsync(id);
+
+            if(produto == null)
+            {
+                return NotFound();
+            }
+
+            return produto;
+        }
     }
 }
