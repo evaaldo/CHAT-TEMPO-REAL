@@ -80,6 +80,22 @@ namespace GerenciamentoProdutos.Controller
             return NoContent();
         }
 
+        //POST
+        [HttpPost]
+
+        public async Task<ActionResult<Produto>> PostProduto(Produto produto)
+        {
+            if(_context.Produtos == null)
+            {
+                return Problem("Entity set 'TarefaContext.Tarefas'  is null.");
+            }
+
+            _context.Produtos.Add(produto);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetProdutos", new { id = produto.ID }, produto);
+        }
+
         // Verificação de existência
         private bool ProdutoExists(int id)
         {
