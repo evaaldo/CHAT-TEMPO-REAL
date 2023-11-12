@@ -96,6 +96,28 @@ namespace GerenciamentoProdutos.Controller
             return CreatedAtAction("GetProdutos", new { id = produto.ID }, produto);
         }
 
+        //DELETE
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProtudo(int id)
+        {
+            if(_context.Produtos == null)
+            {
+                return NotFound();
+            }
+
+            var produto = await _context.Produtos.FindAsync(id);
+
+            if(produto == null)
+            {
+                return NotFound();
+            }
+
+            _context.Produtos.Remove(produto);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         // Verificação de existência
         private bool ProdutoExists(int id)
         {
