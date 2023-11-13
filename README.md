@@ -12,6 +12,9 @@
 <p>Ao me aventurar no desenvolvimento dessa API REST, eu busco estar me familiarizando com o desenvolvimento de atividades solicitadas por um ambiente de produção, que é desenvolvimento de API por meio de arquiteturas de software populares, tais quais MVC e CRUD. Além disso, fazer isso em .NET é o melhor caminho possível para me acostumar completamente com a ferramenta junto a linguagem C#.</p>
 
 <h3>✦ Dependências</h3>
-<p>Nesse projeto foram utilizados principalmente o Entity framework e o Microsoft Aspnet Core</p>
+<ul>
+  <li>Entity Framework</li>
+  <li>Aspnet Core</li>
+</ul>
 
 <p><strong>OBS: Esse projeto não terá uma hospedagem para utilização em outras aplicações, visto que ele tem foco apenas de estudo para entendimento das ferramentas</strong></p>
