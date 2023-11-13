@@ -11,5 +11,6 @@ namespace GerenciamentoProdutos.Context
         }
 
         public DbSet<Produto> Produtos { get; set; }
+        public object Produto { get; internal set; }
     }
 }
